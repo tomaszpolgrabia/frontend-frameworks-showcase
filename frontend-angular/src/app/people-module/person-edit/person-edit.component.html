@@ -1,0 +1,5 @@
+<p *ngIf="!invalidId">
+  <app-person-form id={{personId}}
+                   (personSubmitted)="personUpdated($event)"></app-person-form>
+</p>
+<p *ngIf="invalidId">You gave me incorrect id!!!</p>

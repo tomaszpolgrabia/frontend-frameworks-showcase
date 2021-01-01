@@ -1,0 +1,53 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" routerLink="/">
+      <h2 class="is-uppercase bold" i18n="app-people-management-limited-label">
+        PeopleIndex management limited
+      </h2>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/" i18n="app-home-link-label">
+        Home
+      </a>
+
+      <a class="navbar-item" routerLink="/people/add" i18="app-add-person-link-label">
+        Add person
+      </a>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" (click)="toggleModal()">
+            <strong i18n="app-sign-up-link-label">Sign up</strong>
+          </a>
+          <a class="button is-light" (click)="toggleModal()">
+            <strong i18n="app-log-in-link-label">Log in</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="modal" [ngClass]="{'is-active': notYetImplementedModalActive}">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box" i18n="app-not-implemented-yet">
+      Sorry, this is still waiting for implementation.
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" (click)="toggleModal()"></button>
+</div>
+
+<router-outlet></router-outlet>

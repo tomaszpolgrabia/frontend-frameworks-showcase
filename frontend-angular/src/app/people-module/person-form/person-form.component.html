@@ -1,0 +1,80 @@
+<div *ngIf="!loaded" class="container loader-wrapper">
+  <div class="loader loader-positioned" style="margin: 0 auto"></div>
+</div>
+<form *ngIf="loaded" [formGroup]="personForm">
+  <div class="field is-horizontal">
+    <div class="field-label is-medium">
+      <label for="firstName" class="label">First name</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <input id="firstName"
+                 type="text"
+                 class="input"
+                 placeholder="First name"
+                 formControlName="firstName"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-medium">
+      <label for="lastName" class="label">Last name</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <input id="lastName"
+                 type="text"
+                 class="input"
+                 placeholder="Last name"
+                 formControlName="lastName"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-medium">
+      <label for="email" class="label">E-mail</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <input id="email"
+                 type="text"
+                 [ngClass]="{'input': true, 'is-danger': this.personForm?.controls?.email?.errors}"
+                 placeholder="E-mail"
+                 formControlName="email"/>
+        </div>
+        <p *ngIf="this.personForm?.controls?.email?.errors" class="help is-danger">E-mail is invalid</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-medium">
+      <label for="status" class="label">Status</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <div class="select is-fullwidth">
+            <select id="status" formControlName="status">
+              <option value="0">Active</option>
+              <option value="1">Inactive</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <button class="button is-primary" (click)="submitPerson()">Submit</button>
+    </div>
+  </div>
+</form>

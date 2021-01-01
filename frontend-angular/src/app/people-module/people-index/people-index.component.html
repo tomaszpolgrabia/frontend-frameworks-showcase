@@ -1,0 +1,22 @@
+<p>All persons recorded in the database</p>
+
+<table [ngClass]="['table', 'is-striped', 'is-hoverable', 'is-fullwidth']">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let person of persons" (dblclick)="editPerson(person.id)">
+    <td>{{person.id}}</td>
+    <td>{{person.firstName}}</td>
+    <td>{{person.lastName}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.status === 0 ? 'Active' : 'Inactive'}}</td>
+  </tr>
+  </tbody>
+</table>
