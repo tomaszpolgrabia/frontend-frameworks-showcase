@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {isValidEmail, validateForm} from "../../utils/validators";
 import GlobalContext from "../../GlobalContext";
 import classNames from 'classnames';
+import {useIntl} from "react-intl";
 
 const personValidators = {
     email: [isValidEmail]
@@ -17,6 +18,7 @@ export function PeopleForm(params) {
         status: 0
     });
 
+    const {formatMessage} = useIntl();
     const history = useHistory();
     const {peopleService} = useContext(GlobalContext);
     let [errors, setErrors] = useState(validateForm(personValidators, formData));
@@ -83,11 +85,12 @@ export function PeopleForm(params) {
     return (loading
         ? <div className="loader"/>
         : (personNotAvailable && personId)
-            ? <div>Sorry, the person with id {personId} is not available</div>
+            ? <div>{formatMessage({id: 'people.form.person.not.available'}, {personId: personId})}</div>
             : <form>
                 <div className="field is-horizontal">
                     <div className="field-label is-medium">
-                        <label htmlFor="firstName" className="label">First name</label>
+                        <label htmlFor="firstName"
+                               className="label">{formatMessage({id: 'people.form.firstName.label'})}</label>
                     </div>
                     <div className="field-body">
                         <div className="field">
@@ -97,7 +100,7 @@ export function PeopleForm(params) {
                                     name="firstName"
                                     type="text"
                                     className={classNames("input", {'is-danger': errors.firstName})}
-                                    placeholder="First name"
+                                    placeholder={formatMessage({id: 'people.form.firstName.label'})}
                                     value={formData?.firstName}
                                     onInput={onInputChange}
                                 />
@@ -108,7 +111,8 @@ export function PeopleForm(params) {
 
                 <div className="field is-horizontal">
                     <div className="field-label is-medium">
-                        <label htmlFor="lastName" className="label">Last name</label>
+                        <label htmlFor="lastName"
+                               className="label">{formatMessage({id: 'people.form.lastName.label'})}</label>
                     </div>
                     <div className="field-body">
                         <div className="field">
@@ -118,7 +122,7 @@ export function PeopleForm(params) {
                                     name="lastName"
                                     type="text"
                                     className={classNames("input", {'is-danger': errors.lastName})}
-                                    placeholder="Last name"
+                                    placeholder={formatMessage({id: 'people.form.lastName.label'})}
                                     value={formData?.lastName}
                                     onInput={onInputChange}
                                 />
@@ -129,7 +133,8 @@ export function PeopleForm(params) {
 
                 <div className="field is-horizontal">
                     <div className="field-label is-medium">
-                        <label htmlFor="email" className="label">E-mail</label>
+                        <label htmlFor="email"
+                               className="label">{formatMessage({id: 'people.form.email.label'})}</label>
                     </div>
                     <div className="field-body">
                         <div className="field">
@@ -139,7 +144,7 @@ export function PeopleForm(params) {
                                     name="email"
                                     type="text"
                                     className={classNames("input", {'is-danger': errors.email})}
-                                    placeholder="E-mail"
+                                    placeholder={formatMessage({id: 'people.form.email.label'})}
                                     value={formData?.email}
                                     onInput={onInputChange}
                                 />
@@ -150,7 +155,8 @@ export function PeopleForm(params) {
 
                 <div className="field is-horizontal">
                     <div className="field-label is-medium">
-                        <label htmlFor="status" className="label">Status</label>
+                        <label htmlFor="status"
+                               className="label">{formatMessage({id: 'people.form.status.label'})}</label>
                     </div>
                     <div className="field-body">
                         <div className="field">
@@ -162,8 +168,10 @@ export function PeopleForm(params) {
                                         className={classNames("input", {'is-danger': errors.status})}
                                         value={formData?.status}
                                         onInput={onInputChange}>
-                                        <option value="0">Active</option>
-                                        <option value="1">Inactive</option>
+                                        <option
+                                            value="0">{formatMessage({id: 'people.form.status.value.active'})}</option>
+                                        <option
+                                            value="1">{formatMessage({id: 'people.form.status.value.inactive'})}</option>
                                     </select>
                                 </div>
                             </div>
@@ -173,9 +181,10 @@ export function PeopleForm(params) {
 
                 <div className="field">
                     <div className="control">
-                        <button type="button" className="button is-primary" onClick={() => submitPerson()}>Submit
+                        <button type="button" className="button is-primary" onClick={() => submitPerson()}>
+                            {formatMessage({id: 'people.form.submit.label'})}
                         </button>
                     </div>
                 </div>
             </form>)
-};
+}

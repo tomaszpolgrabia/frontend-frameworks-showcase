@@ -1,5 +1,6 @@
 import "bulma";
 import {useContext, useEffect, useState} from "react";
+import {FormattedMessage, useIntl} from 'react-intl';
 import {useHistory} from 'react-router-dom';
 import GlobalContext from "../../GlobalContext";
 
@@ -7,6 +8,8 @@ export default function PeopleIndex() {
     const {peopleService} = useContext(GlobalContext);
     const [people, setPeople] = useState([]);
     const history = useHistory();
+    const {formatMessage} = useIntl();
+
     useEffect(() => {
         peopleService.getAllPeople()
             .then(people => {
@@ -22,11 +25,11 @@ export default function PeopleIndex() {
         <table className="table is-striped is-fullwidth">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>E-mail</th>
-                <th>Status</th>
+                <th><FormattedMessage id='people.index.table.id.header'/></th>
+                <th><FormattedMessage id='people.index.table.firstName.header'/></th>
+                <th><FormattedMessage id='people.index.table.lastName.header'/></th>
+                <th><FormattedMessage id='people.index.table.email.header'/></th>
+                <th><FormattedMessage id='people.index.table.status.header'/></th>
             </tr>
             </thead>
             <tbody>
@@ -36,7 +39,9 @@ export default function PeopleIndex() {
                     <td>{it.firstName}</td>
                     <td>{it.lastName}</td>
                     <td>{it.email}</td>
-                    <td>{it.status === 0 ? 'Active' : 'Inactive'}</td>
+                    <td>{it.status === 0
+                        ? formatMessage({id: 'people.index.table.status.value.active'})
+                        : formatMessage({id: 'people.index.table.status.value.inactive'})}</td>
                 </tr>
             )}
             </tbody>
