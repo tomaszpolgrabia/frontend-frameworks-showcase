@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "i18n": "ng extract-i18n --out-file src/locale/messages.xlf && xliffmerge -p xliffmerge.dev.json de"
   },
   "private": true,
   "dependencies": {
@@ -26,7 +27,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.4",
-    "@angular/cli": "~11.0.4",
+    "@angular/cli": "^11.0.5",
     "@angular/compiler-cli": "~11.0.4",
     "@angular/localize": "^11.0.4",
     "@types/jasmine": "~3.6.0",
@@ -39,6 +40,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ngx-i18nsupport": "^0.17.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

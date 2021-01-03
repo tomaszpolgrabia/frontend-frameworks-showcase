@@ -4,7 +4,8 @@ Angular version of frontend for a simple people management application.
 
 ## How to add new translations
 
- ng extract-i18n --out-file src/locale/messages.de.xlf
+ ng extract-i18n --out-file src/locale/messages.xlf
+ && xliffmerge -p .\xliffmerge.dev.json de
 
 ## Development server
 
