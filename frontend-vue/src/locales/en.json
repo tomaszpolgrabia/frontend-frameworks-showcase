@@ -1,0 +1,21 @@
+{
+  "app.navbar.banner": "People Management Limited",
+  "app.navbar.home.label": "Home",
+  "app.navbar.addPerson.label": "Add person",
+  "app.people.index.table.id.header": "Id",
+  "app.people.index.table.firstName.header": "First name",
+  "app.people.index.table.lastName.header": "Last name",
+  "app.people.index.table.email.header": "E-mail",
+  "app.people.index.table.status.header": "Status",
+  "app.people.index.table.status.value.active": "Active",
+  "app.people.index.table.status.value.inactive": "Inactive",
+  "app.people.form.firstName.label": "First name",
+  "app.people.form.lastName.label": "Last name",
+  "app.people.form.email.label": "E-mail",
+  "app.people.form.status.label": "Status",
+  "app.people.form.status.value.active": "Active",
+  "app.people.form.status.value.inactive": "Inactive",
+  "app.people.form.submit.label": "Submit",
+  "app.navbar.signup": "Sign up",
+  "app.navbar.login": "Log in"
+}
