@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" routerLink="/">
-      <h2 class="is-uppercase bold" i18n="app-people-management-limited-label">
+      <h2 class="is-uppercase bold" i18n="@@app.banner">
         PeopleIndex management limited
       </h2>
     </a>
@@ -15,11 +15,11 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" routerLink="/" i18n="app-home-link-label">
+      <a class="navbar-item" routerLink="/" i18n="@@app.home.link.label">
         PeopleIndex
       </a>
 
-      <a class="navbar-item" routerLink="/people/add" i18="app-add-person-link-label">
+      <a class="navbar-item" routerLink="/people/add" i18n="@@app.addPerson.link.label">
         Add person
       </a>
 
@@ -29,10 +29,10 @@
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-primary" (click)="toggleModal()">
-            <strong i18n="app-sign-up-link-label">Sign up</strong>
+            <strong i18n="@@app.signUp.link.label">Sign up</strong>
           </a>
           <a class="button is-light" (click)="toggleModal()">
-            <strong i18n="app-log-in-link-label">Log in</strong>
+            <strong i18n="@@app.logIn.link.label">Log in</strong>
           </a>
         </div>
       </div>
@@ -43,7 +43,7 @@
 <div class="modal" [ngClass]="{'is-active': notYetImplementedModalActive}">
   <div class="modal-background"></div>
   <div class="modal-content">
-    <div class="box" i18n="app-not-implemented-yet">
+    <div class="box" i18n="@@app.dialog.notImplementedYet.message">
       Sorry, this is still waiting for implementation.
     </div>
   </div>

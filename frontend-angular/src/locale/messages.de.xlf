@@ -2,45 +2,53 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="c5b59182c27173fd4fe148d3c8a9d373b23fd292" datatype="html">
+      <trans-unit id="app.banner" datatype="html">
         <source> PeopleIndex management limited </source>
+        <target>Leute Verwaltung Begrenzt</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">5,6</context>
         </context-group>
-        <note priority="1" from="description">app-people-management-limited-label</note>
       </trans-unit>
-      <trans-unit id="815cad6a13eee2edfed8a43dc3a64d88b1b2db27" datatype="html">
+      <trans-unit id="app.home.link.label" datatype="html">
         <source> PeopleIndex </source>
+        <target> Hauptseite </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">19,20</context>
         </context-group>
-        <note priority="1" from="description">app-home-link-label</note>
       </trans-unit>
-      <trans-unit id="c40c132843f349c3aa49730405de1d0ca733aef6" datatype="html">
+      <trans-unit id="app.addPerson.link.label" datatype="html">
+        <source> Add person </source>
+        <target> Füge neue Person hinzu </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.signUp.link.label" datatype="html">
         <source>Sign up</source>
+        <target>Registrieren Sich an</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
-        <note priority="1" from="description">app-sign-up-link-label</note>
       </trans-unit>
-      <trans-unit id="f093d9574ab746b231504bd2cbb65f04bd7b00db" datatype="html">
+      <trans-unit id="app.logIn.link.label" datatype="html">
         <source>Log in</source>
+        <target>Melden Sich an</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
-        <note priority="1" from="description">app-log-in-link-label</note>
       </trans-unit>
-      <trans-unit id="f8a96e4bba93359867f7bd83d8a13a2f086bd885" datatype="html">
+      <trans-unit id="app.dialog.notImplementedYet.message" datatype="html">
         <source> Sorry, this is still waiting for implementation. </source>
+        <target> Wir bedauern, aber es wurde noch nicht implementiert.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">47,48</context>
         </context-group>
-        <note priority="1" from="description">app-not-implemented-yet</note>
       </trans-unit>
     </body>
   </file>

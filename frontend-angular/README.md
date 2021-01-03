@@ -1,6 +1,10 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Angular version of frontend for a simple people management application.
+
+## How to add new translations
+
+ ng extract-i18n --out-file src/locale/messages.de.xlf
 
 ## Development server
 

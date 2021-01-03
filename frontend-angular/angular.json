@@ -27,7 +27,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "localize": [
-              "en-US"
+              "de"
             ],
             "outputPath": "dist/frontend",
             "index": "src/index.html",
