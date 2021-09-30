@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dojo App</title>
+  <meta charset="utf-8" />
+
+  <!--dojoConfig-->
+  <script>
+    dojoConfig = {
+      parseOnLoad: false,
+      async: true,
+      baseUrl: "./",
+      packages: [{
+        name: "widgets",
+        location: "./widgets"
+      }],
+      cacheBust: true // Get "fresh" resources
+    };
+  </script>
+
+  <!--load dojo toolkit-->
+  <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+
+  <!-- load app js -->
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <div id="appContainer"></div>
+</body>
+
+</html>
