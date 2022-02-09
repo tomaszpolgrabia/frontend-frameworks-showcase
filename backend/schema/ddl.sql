@@ -3,9 +3,9 @@ create table persons (
 	firstName text not null,
 	lastName text not null,
 	email varchar(256) not null,
-	status integer default 0
-	created_at date not null default datetime('now', 'localtime'),
-	updated_at date not null default datetime('now', 'localtime')
+	status integer default 0,
+	created_at date not null default current_timestamp,
+	updated_at date not null default current_timestamp
 );
 
 create trigger update_at_persons 
